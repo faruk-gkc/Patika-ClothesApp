@@ -1,5 +1,6 @@
 import { GlobalContext } from "../context/GlobalContext";
 import { useContext } from "react";
+import {Link} from 'react-router-dom' 
 
 const BasketList = () => {
   let { basketProducts } = useContext(GlobalContext);
@@ -8,9 +9,9 @@ const BasketList = () => {
     <ul class="list-group">
       {basketProducts.map((product, index) => (
         <>
-          <a
+        <Link to='/' style={{ textDecoration: 'none' }}>
+          <div
             key={index}
-            href="/"
             className="list-group-item list-group-item-action flex-column align-items-start"
           >
             <div className="d-flex w-100 justify-content-between">
@@ -21,13 +22,17 @@ const BasketList = () => {
              </div>
               <badge class="badge badge-danger d-flex align-items-center justify-content-center p-3">{product.qty}</badge>
             </div>
-          </a>
+          </div>
+          </Link>
          
         </>
       ))}
-       <a href="/" className="btn btn-block btn-outline-info">
+      <Link to='/' style={{ textDecoration: 'none' }}>
+      <button className="btn btn-block btn-outline-info">
             Anasayfaya Dön
-          </a>
+          </button>
+      </Link>
+       
     </ul>
   );
 };

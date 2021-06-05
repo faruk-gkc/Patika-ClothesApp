@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useGetAxios from "../../HttpRequest";
+import {Link} from 'react-router-dom'
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -12,7 +13,9 @@ const ProductDetails = () => {
   if (productDetails.data) {
     content = (
       <div className="list-group">
-        <a
+        <Link to="/" style={{ textDecoration: 'none' }}>
+        </Link>
+        <div
           href="#"
           class="list-group-item list-group-item-action flex-column align-items-center justify-content-center"
         >
@@ -31,10 +34,13 @@ const ProductDetails = () => {
               </h2>
             <p class="mb-1">{productDetails.data.description}</p>
           </div>
-        </a>
-        <a href="/" className="btn btn-outline-info btn-block">
+        </div>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+        <button className="btn btn-outline-info btn-block">
           Anasayfaya Dön
-        </a>
+        </button>
+        </Link>
+
       </div>
     );
   }
