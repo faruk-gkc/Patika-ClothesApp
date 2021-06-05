@@ -1,5 +1,4 @@
 # Clothes Uygulaması
-<hr/>
 
 Patika Frontend Web Development Projeleri için geliştirilmiş web uygulaması.
 
