@@ -12,7 +12,7 @@ import {
 import { HiShoppingCart } from "react-icons/hi";
 
 const CartSummary = (props) => {
-  let { basketProducts, removeBasket } = useContext(GlobalContext);
+  let { basketProducts } = useContext(GlobalContext);
   console.log(basketProducts);
   return (
     <>
